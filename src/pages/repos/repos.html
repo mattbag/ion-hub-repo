@@ -19,12 +19,12 @@
 <ion-content class="bg-black">
   <ion-searchbar (input)="search($event)" (ionClear)="onCancel($event)"></ion-searchbar>
   <!--<ion-searchbar (input)="search($event)"></ion-searchbar>-->
-  <ion-card *ngFor="let repo of inf_repos">
+  <ion-card *ngFor="let repo of repos">
     <ion-card-header>
      <ion-row wrap>
         <ion-col width-expand>
           <ion-card-title>
-            <a href="{{repo.html_url}}" target="_blank">{{repo.name}}</a>
+            <a href="{{repo?.html_url}}" target="_blank">{{repo?.name}}</a>
           </ion-card-title>
         </ion-col>
         </ion-row>
@@ -33,13 +33,13 @@
         <ion-col width-50 text-center>
           <button ion-button icon-left clear small>
         <ion-icon name="star-outline"></ion-icon>
-        <div>{{repo.stargazers_count}}</div>
+        <div>{{repo?.stargazers_count}}</div>
       </button>
         </ion-col>
         <ion-col width-50 text-center>
           <button ion-button icon-left clear small>
         <ion-icon name="git-branch"></ion-icon>
-        <div>{{repo.forks_url.length}}</div>
+        <div>{{repo?.forks_url.length}}</div>
       </button>
         </ion-col>
       </ion-row>
@@ -48,9 +48,9 @@
      
 
         <p>
-          {{repo.description}}
+          {{repo?.description}}
         </p>
-        <p>- Author: {{repo.owner.login}}</p>
+        <p>- Author: {{repo?.owner.login}}</p>
 
     </ion-card-content>
 

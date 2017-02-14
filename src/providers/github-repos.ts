@@ -23,19 +23,11 @@ export class GithubRepos {
     return this.http.get(`${this.githubApiUrl}/search/repositories?q=stars:>1000`)
       .map(res => <Repo[]>res.json().items);
   }
-//   // load user info
-//   loadInfo(login: string): Observable<User> {
-//     return this.http.get(`${this.githubApiUrl}/users/${login}`)
-//       .map(res => <User>(res.json()))
-//   }
+
   searchRepos(searchParams: string): Observable<Repo[]>{
      return this.http.get(`${this.githubApiUrl}/search/repositories?q=${searchParams}`)
       .map(res => <Repo[]>res.json().items);
   }
-//   // load user repos
-//    loadUserRepos(login: string): Observable<Repo[]> {
-//     return this.http.get(`${this.githubApiUrl}/users/${login}/repos`)
-//       .map(res => <Repo[]>(res.json()))
-//   }
+
   
 }
